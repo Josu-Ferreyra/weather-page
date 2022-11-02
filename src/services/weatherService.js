@@ -5,7 +5,7 @@ export const getCities = async (cityName) => {
   const { data } = await Axios.get(`/search.json?key=${API_KEY}&q='${cityName}'`)
   return data
 }
-export const getCurrentWeather = async (cityName) => {
-  const { data } = await Axios.get(`/current.json?key=${API_KEY}&q=${cityName}`)
+export const getWeather = async (cityName) => {
+  const { data } = await Axios.get(`/forecast.json?key=${API_KEY}&q=${cityName}&days=3`)
   return data
 }

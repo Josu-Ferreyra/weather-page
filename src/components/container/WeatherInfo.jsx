@@ -1,19 +1,24 @@
 import { useEffect, useState } from 'react'
-import { getCurrentWeather } from '../../services/weatherService'
+import { getWeather } from '../../services/weatherService'
 import '../../styles/WeatherInfo.css'
 
 function WeatherInfo ({ city }) {
   const [current, setCurrent] = useState({})
+  const [forecast, setForecast] = useState([])
   useEffect(() => {
-    getCurrentWeather(city)
-      .then(({ current: c }) => setCurrent(c))
-      .catch(e => setCurrent({}))
+    getWeather(city)
+      .then(({ current: c, forecast: f }) => {
+        setCurrent(c)
+        setForecast(f.forecastday)
+      })
   }, [city])
 
   return (
     <div className='weatherInfo'>
       <h1>Weather Info: {city}</h1>
-      <p>{current.feelslike_c}</p>
+      <p>{current.temp_c}</p>
+      {console.log(current)}
+      <p>{forecast[0]?.date}</p>
     </div>
   )
 }
