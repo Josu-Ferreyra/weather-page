@@ -1,5 +1,6 @@
-// Components
+// React Things
 import { useState } from 'react'
+// Components
 import SearchCity from './components/container/SearchCity'
 import WeatherInfo from './components/container/WeatherInfo'
 
