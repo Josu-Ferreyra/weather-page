@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { getWeather } from '../../services/weatherService'
 import '../../styles/WeatherInfo.css'
 import Forecast from '../pures/Forecast'
 
-function WeatherInfo ({ city }) {
+function WeatherInfo () {
+  const city = useSelector(state => state.city)
   const [current, setCurrent] = useState({})
   const [forecast, setForecast] = useState([])
   useEffect(() => {

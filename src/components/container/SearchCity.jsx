@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { updateCity } from '../../redux/actions/actions'
 import { getCities } from '../../services/weatherService'
 import '../../styles/SearchCity.css'
 
 function SearchCity ({ setCity }) {
+  const dispatch = useDispatch()
   const [options, setOptions] = useState([])
   const [input, setInput] = useState('')
   const [visible, setVisible] = useState(true)
@@ -31,7 +34,7 @@ function SearchCity ({ setCity }) {
                 key={option.id}
                 value={option.name}
                 onClick={() => {
-                  setCity(option.name)
+                  dispatch(updateCity(option.name))
                   setInput(option.name)
                   setVisible(false)
                 }}
