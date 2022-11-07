@@ -1,9 +1,15 @@
 import PropTypes from 'prop-types'
+import '../../styles/Forecast.css'
 
 function Forecast ({ day, date }) {
+  const showDate = {
+    0: 'Today',
+    1: 'Tomorrow',
+    2: 'The Day After Tomorrow'
+  }
   return (
     <div className='forecast'>
-      <h2>{date.split('-')[2]}/{date.split('-')[1]}</h2>
+      <h2>{showDate[date]}</h2>
       <div className='maxTemp'>
         <h4>Max Temp:</h4>
         <p>{day.maxtemp_c}°C</p>
@@ -15,12 +21,12 @@ function Forecast ({ day, date }) {
         <p>{day.mintemp_f}°F</p>
       </div>
       <div className='probability'>
-        <div className='rainProbability'>
+        <div className='rain'>
           <p>
             Rain Probability: {day.daily_chance_of_rain}%
           </p>
         </div>
-        <div className='snowProbability'>
+        <div className='snow'>
           <p>
             Snow Probability: {day.daily_chance_of_snow}%
           </p>

@@ -6,7 +6,6 @@ import Forecast from '../pures/Forecast'
 function WeatherInfo ({ city }) {
   const [current, setCurrent] = useState({})
   const [forecast, setForecast] = useState([])
-
   useEffect(() => {
     getWeather(city)
       .then(({ current: c, forecast: f }) => {
@@ -38,11 +37,11 @@ function WeatherInfo ({ city }) {
         </p>
       </div>
       {
-        forecast.map((forecast) => (
+        forecast.map((forecast, index) => (
           <Forecast
             key={forecast.date}
             day={forecast.day}
-            date={forecast.date}
+            date={`${index}`}
           />
         ))
       }
