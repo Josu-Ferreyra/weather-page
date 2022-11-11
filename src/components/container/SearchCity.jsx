@@ -4,7 +4,7 @@ import { updateCity } from '../../redux/actions/actions'
 import { getCities } from '../../services/weatherService'
 import '../../styles/SearchCity.css'
 
-function SearchCity ({ setCity }) {
+function SearchCity () {
   const dispatch = useDispatch()
   const [options, setOptions] = useState([])
   const [input, setInput] = useState('')
