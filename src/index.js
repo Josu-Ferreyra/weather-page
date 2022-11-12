@@ -6,10 +6,13 @@ import './styles/index.css'
 import App from './App'
 import { Provider } from 'react-redux'
 import { configStore } from './redux/store/configStore'
+import { BrowserRouter } from 'react-router-dom'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <Provider store={configStore()}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>
 )
