@@ -1,0 +1,171 @@
+/* CURRENT */
+.return {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 1rem;
+  background-color: var(--gris-claro);
+  border: .5rem solid var(--negro);
+  border-radius: 50%;
+  height: 6rem;
+  width: 6rem;
+}
+.return i {
+  color: var(--negro);
+  font-size: 3rem;
+}
+.current{
+  background-color: #fff;
+  box-shadow: 0 1rem 1rem var(--gris-claro);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 1rem;
+}
+.current h1 {
+  text-align: center;
+  margin: 0;
+}
+.condition{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-self: center;
+  border-radius: 3rem;
+  min-width: fit-content;
+  width: 70%;
+  margin: 2rem 0;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 0 1rem .2rem #ddd;
+}
+.condition img {
+  margin: 0;
+  width: 30%;
+}
+.condition p {
+  margin: 0;
+}
+
+.currentTemp{
+  margin: 1rem auto;
+}
+.currentTemp p {
+  font-size: 5rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+.currentTemp button {
+  background-color: transparent;
+  border: .2rem solid #ccc;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  display: block;
+  margin: auto;
+
+  transition: background-color .2s ease;
+}
+.currentTemp button:hover {
+  cursor: pointer;
+  background-color: #ccc;
+}
+.lastUpdated {
+  grid-column: 1/3;
+  text-align: center;
+  margin: 0;
+}
+/* @media (min-width: 768px) {
+  .lastUpdated{
+    background-color: green;
+  }
+} */
+
+/* FORECAST */
+.forecastTitle {
+  margin: 4rem 0;
+  text-align: center;
+  padding: 2rem 0;
+  background-color: var(--gris-claro);
+}
+.forecast{
+  background-color: #fff;
+  margin: 2rem;
+  /* padding: 2rem; */
+  border-radius: 1rem;
+  box-shadow: 0 1rem 1rem #999;
+}
+.forecast .date {
+  margin: 0 1rem;
+  padding-top: 2rem;
+  text-align: center;
+}
+.maxminTemp{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 1rem 0 3rem 0;
+  padding: 0 1rem;
+}
+.maxminTemp .icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+.maxminTemp .icons i {
+  font-size: 7rem;
+}
+.maxminTemp .icons h4 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: normal;
+  text-align: center;
+}
+.maxminTemp p {
+  font-size: 3rem;
+  margin: 0;
+  width: 50%;
+  font-weight: bold;
+  text-align: center;
+}
+.forecast button {
+  background-color: var(--negro);
+  color: var(--gris-claro);
+  display: block;
+  padding: 1rem;
+  border-radius: .5rem;
+  border: none;
+  margin: 2rem auto;
+  transition: 
+    border-radius .2s ease
+  ;
+}
+.forecast button:hover {
+  cursor: pointer;
+  border-radius: 2rem;
+}
+.probability {
+  background-color: var(--gris-claro);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+  padding: 2rem;
+  border-radius: 0 0 1rem 1rem;
+  border: .1rem solid var(--gris-medio);
+}
+.probability h3 {
+  grid-column: 1/3;
+  margin: 0 0 2rem 0;
+}
+.probability i {
+  font-size: 4rem;
+}
+.probability p {
+  margin: .5rem;
+}
