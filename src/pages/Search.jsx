@@ -3,8 +3,8 @@ import '../styles/Search.css'
 
 function Search () {
   return (
-    <div id='searchCityPage'>
-      <h1 id='searchTitle'>Weather App</h1>
+    <div className='searchCityPage'>
+      <h1 className='searchTitle'>Weather App</h1>
       <p className='pageAuthor'>by Josué Ferreyra</p>
       <SearchCityContainer />
     </div>

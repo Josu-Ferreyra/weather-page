@@ -1,4 +1,4 @@
-#searchCityPage{
+.searchCityPage{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,11 +27,11 @@
     background: rgb(85, 255, 0);
   }
 }
-#searchCity {
+.searchCity {
   display: flex;
   width: 100%;
 }
-#searchCity input{
+.searchCity input{
   width: 50rem;
   max-width: 90%;
   margin: 3rem auto;
@@ -45,12 +45,12 @@
     padding .2s ease,
     border-radius .2s ease;
 }
-#searchCity input:focus{
+.searchCity input:focus{
   padding: 1.5rem;
   border-radius: 5rem;
   outline: none;
 }
-#searchTitle {
+.searchTitle {
   text-align: center;
   font-size: 5rem;
   margin: 0;
@@ -75,6 +75,10 @@
   box-shadow: 0 .5rem .5rem #111;
   padding: 1rem;
   margin: 1.5rem 0;
+}
+.cityOptions button:hover{
+  cursor: pointer;
+  background-color: var(--gris-claro);
 }
 .cityOptions button:first-child{
   margin-top: 0;
