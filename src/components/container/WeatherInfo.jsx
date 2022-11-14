@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { getWeather } from '../../services/weatherService'
-import '../../styles/WeatherInfo.css'
+import Current from '../pures/Current'
 import Forecast from '../pures/Forecast'
 
 function WeatherInfo () {
+  const navigate = useNavigate()
   const city = useSelector(state => state.city)
   const [current, setCurrent] = useState({})
   const [forecast, setForecast] = useState([])
@@ -16,28 +18,19 @@ function WeatherInfo () {
       })
   }, [city])
   useEffect(() => {
-    console.log('CURRENT =>', current)
-    console.log('FORECAST =>', forecast)
+    console.log({ current, forecast })
   })
 
   return (
     <div className='weatherInfo'>
-      <h1>{city}</h1>
-      <div className='condition'>
-        <img src={current.condition?.icon} alt={current.condition?.text} />
-        <p>{current.condition?.text}</p>
-      </div>
-      <div className='currentTemp'>
-        <div className='tempCelcius'>
-          <p>{current.temp_c}°C</p>
-        </div>
-        <div className='tempFahrenheit'>
-          <p>{current.temp_f}°F</p>
-        </div>
-        <p className='lastUpdated'>
-          Last Updated: {current.last_updated?.split(' ')[1]}
-        </p>
-      </div>
+      <button
+        onClick={() => navigate('/search')}
+        className='return'
+      >
+        <i className='bi bi-caret-left-fill' />
+      </button>
+      <Current current={current} city={city} />
+      <h2 className='forecastTitle'>Forecast</h2>
       {
         forecast.map((forecast, index) => (
           <Forecast
