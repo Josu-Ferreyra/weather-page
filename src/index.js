@@ -2,6 +2,7 @@
 import ReactDOM from 'react-dom/client'
 // Styles
 import './styles/index.css'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 // Components
 import App from './App'
 import { Provider } from 'react-redux'
