@@ -1,8 +1,12 @@
 import PropTypes from 'prop-types'
 
 function SearchCity ({ dispatch, action, city }) {
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    alert('Seleccione una de las opciones')
+  }
   return (
-    <form>
+    <form id='searchCity' onSubmit={handleSubmit}>
       <input
         className='inputCity'
         placeholder='City'
