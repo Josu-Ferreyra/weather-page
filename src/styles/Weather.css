@@ -89,11 +89,16 @@
   text-align: center;
   margin: 0;
 }
-/* @media (min-width: 768px) {
-  .lastUpdated{
-    background-color: green;
+
+@media (min-width: 425px) {
+  .current {
+    max-width: 35rem;
+    margin: 5rem auto;
   }
-} */
+  .condition{
+    max-width: 15rem;
+  }
+}
 
 /* FORECAST */
 .forecastTitle {
@@ -176,4 +181,30 @@
 }
 .probability p {
   margin: .5rem;
+}
+
+@media (min-width: 425px) {
+  .forecast {
+    max-width: 35rem;
+    margin: 5rem auto;
+  }
+}
+@media (min-width: 1024px) {
+  .forecastContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    margin: 0 2rem;
+    column-gap: 2rem;
+  }
+  .forecast {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 2rem 4rem 2rem;
+    width: 100%;
+  }
+  .probability {
+    flex-grow: 1;
+  }
 }
