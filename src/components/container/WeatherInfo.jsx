@@ -31,15 +31,17 @@ function WeatherInfo () {
       </button>
       <Current current={current} city={city} />
       <h2 className='forecastTitle'>Forecast</h2>
-      {
-        forecast.map((forecast, index) => (
-          <Forecast
-            key={forecast.date}
-            day={forecast.day}
-            date={`${index}`}
-          />
-        ))
-      }
+      <div className='forecastContainer'>
+        {
+          forecast.map((forecast, index) => (
+            <Forecast
+              key={forecast.date}
+              day={forecast.day}
+              date={`${index}`}
+            />
+          ))
+        }
+      </div>
     </div>
   )
 }
