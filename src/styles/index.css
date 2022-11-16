@@ -4,11 +4,13 @@
   --fondo: #EEE;
   --gris-claro: #D5D5D5;
   --gris-medio: #CCC;
+  --violeta: #A5F;
 }
 html {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   font-size: 62.5%;
+  color: var(--negro);
 }
 *, *:before, *:after {
   box-sizing: inherit;

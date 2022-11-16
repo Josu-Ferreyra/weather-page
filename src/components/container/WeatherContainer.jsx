@@ -25,7 +25,7 @@ function WeatherContainer () {
         onClick={() => navigate('/search')}
         className='return'
       >
-        <i className='bi bi-caret-left-fill' />
+        <i className='bi bi-x-lg' />
       </button>
       <Current current={current} />
       <h2 className='forecastTitle'>Forecast</h2>
