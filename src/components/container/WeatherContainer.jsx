@@ -5,7 +5,7 @@ import { getWeather } from '../../services/weatherService'
 import Current from '../pures/Current'
 import Forecast from '../pures/Forecast'
 
-function WeatherInfo () {
+function WeatherContainer () {
   const navigate = useNavigate()
   const city = useSelector(state => state.city)
   const [current, setCurrent] = useState({})
@@ -46,4 +46,4 @@ function WeatherInfo () {
   )
 }
 
-export default WeatherInfo
+export default WeatherContainer
