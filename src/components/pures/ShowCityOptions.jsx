@@ -13,7 +13,7 @@ function ShowCityOptions ({ options, dispatch, action }) {
               className='cityOption'
               onClick={() => {
                 dispatch(action(option.name))
-                navigate('/current')
+                navigate('/weather')
               }}
             >
               {option.name}, {option.region}

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { getWeather } from '../../services/weatherService'
-import Current from '../pures/Current'
+import Current from './Current'
 import Forecast from '../pures/Forecast'
 
 function WeatherContainer () {
@@ -15,11 +15,9 @@ function WeatherContainer () {
       .then(({ current: c, forecast: f }) => {
         setCurrent(c)
         setForecast(f.forecastday)
+        // console.log({ c, f })
       })
   }, [city])
-  useEffect(() => {
-    console.log({ current, forecast })
-  })
 
   return (
     <div className='weatherInfo'>
@@ -29,7 +27,7 @@ function WeatherContainer () {
       >
         <i className='bi bi-caret-left-fill' />
       </button>
-      <Current current={current} city={city} />
+      <Current current={current} />
       <h2 className='forecastTitle'>Forecast</h2>
       <div className='forecastContainer'>
         {
