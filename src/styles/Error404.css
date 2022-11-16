@@ -1,0 +1,47 @@
+.errorContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 90%;
+  margin: auto;
+  height: 100vh;
+  background-color: var(--fondo);
+}
+.errorContainer > * {
+  margin: 0;
+  text-align: center;
+}
+.error404 {
+  animation: errorTitle 5s infinite;
+  /* background-color: #F44; */
+  color: #f44;
+}
+.error404 i {
+  font-size: 5rem;
+  margin: .5rem;
+}
+.errorContainer p {
+  font-size: 5rem;
+  margin: 2rem 0 5rem 0;
+  color: #f44;
+  font-weight: bold;
+}
+.errorContainer button {
+  padding: 1rem;
+  width: 75%;
+  max-width: 30rem;
+  border: .5rem solid #f44;
+  color: #f44;
+  border-radius: 1rem;
+  font-weight: bold;
+  transition: 
+    background-color .5s ease,
+    color .5s ease
+  ;
+}
+.errorContainer button:hover {
+  cursor: pointer;
+  background-color: #f44;
+  color: var(--fondo);
+}
