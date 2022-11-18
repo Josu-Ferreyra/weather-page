@@ -1,20 +1,25 @@
 import PropTypes from 'prop-types'
+import { useState } from 'react'
 
 function SearchCity ({ dispatch, action, city }) {
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // TODO: Cambiar el Alert por otra solución más elegante
-    alert('Seleccione una de las opciones')
-  }
+  const [showSearchbar, setShowSearchbar] = useState(false)
   return (
-    <form className='searchCity' onSubmit={handleSubmit}>
+    <div
+      className={`searchCity ${showSearchbar ? 'showSearch' : ''}`}
+    >
       <input
-        className='inputCity'
-        placeholder='City'
+        placeholder='City Name'
         value={city}
-        onChange={({ target }) => dispatch(action(target.value))}
+        onChange={({ target }) =>
+          showSearchbar
+            ? dispatch(action(target.value))
+            : undefined}
       />
-    </form>
+      <i
+        className='bi bi-geo-alt'
+        onClick={() => setShowSearchbar(!showSearchbar)}
+      />
+    </div>
   )
 }
 

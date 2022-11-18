@@ -3,82 +3,118 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #000;
-  animation: background 10s infinite;
   height: 100vh;
-}
-@keyframes background {
-  0% {
-    background: rgb(85, 255, 0);
-  }
-  20% {
-    background: rgb(0,255,212);
-  }
-  40% {
-    background: rgb(0,123,255);
-  }
-  60% {
-    background: rgb(135,0,255);
-  }
-  80% {
-    background: rgb(255,0,178);
-  }
-  100% {
-    background: rgb(85, 255, 0);
-  }
 }
 .searchCity {
   display: flex;
-  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  width: 4rem;
+  border-radius: 50%;
+  background-color: #FFF;
+  box-shadow: 0 0 0 .2rem var(--violeta);
+  --searchDimensions: 0px;
+  transition: 
+    width 1s ease,
+    border-radius .5s 1s ease
+  ;
+}
+.showSearch {
+  border-radius: 1rem;
+  justify-content: space-between;
+  padding-left: 1rem;
+  width: min(90%, 50rem);
+  --searchDimensions: 100%;
+  transition: 
+    width 1s ease,
+    border-radius .5s ease
+  ;
 }
 .searchCity input{
-  width: 50rem;
-  max-width: 90%;
-  margin: 3rem auto;
-  padding: 1rem;
-  border-radius: 2rem;
+  width: var(--searchDimensions);
+  height: var(--searchDimensions);
+  padding: 0;
+  opacity: 1;
   border: none;
-  text-align: center;
-  box-shadow: 0rem .5rem 1rem #111;
-  font-weight: bold;
-  transition: 
-    padding .2s ease,
-    border-radius .2s ease;
-}
-.searchCity input:focus{
-  padding: 1.5rem;
-  border-radius: 5rem;
+  border-radius: 1rem;
   outline: none;
+  font-weight: bold;
+  color: var(--violeta);
+  transition: 1s;
+}
+.searchCity input::placeholder{
+  color: var(--violeta);
+  opacity: .5;
+}
+.searchCity i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--violeta);
+  width: 1rem;
+  height: 1rem;
+  padding: 2rem;
+  cursor: pointer;
 }
 .searchTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   text-align: center;
-  font-size: 5rem;
-  margin: 0;
+  margin: 1rem 2rem;
+  border-radius: 1rem;
+  background-color: var(--violeta);
+  color: #fff;
+  box-shadow: 0 .5rem 2rem 1rem var(--gris-medio);
 }
+.searchTitle h1 {
+  font-size: 5rem;
+  padding: 4rem 0;
+  margin: 0 2rem;
+  line-height: 1.25;
+}
+.searchTitle p {
+  background-color: #fff;
+  color: var(--violeta);
+  border-radius: 0 0 1rem 1rem;
+  margin: 0;
+  padding: 1rem;
+}
+
 .cityOptions {
   display: flex;
-  flex-wrap: wrap;
-  width: 50rem;
-  max-width: 90%;
+  flex-direction: column;
+  width: min(90%, 50rem);
   margin: 0 auto;
-  padding: 0 1.5rem;
-  max-height: 40vh;
+  height: 0;
+  transition: height 1s ease;
   overflow-y: scroll;
   /* Scrollbar Styles for Firefox users*/
-  scrollbar-color: rgba(50, 50, 50, .5) transparent;
+  scrollbar-color: var(--violeta) transparent;
   scrollbar-width: thin;
+}
+.cityOptions:has(button) {
+  height: 40vh;
+  transition: height 1s ease;
 }
 .cityOptions button{
   width: 100%;
   border: none;
-  border-radius: 3rem;
-  box-shadow: 0 .5rem .5rem #111;
-  padding: 1rem;
-  margin: 1.5rem 0;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  background-color: #fff;
+  color: var(--violeta);
+  transition: 
+    background-color .5s ease,
+    color .5s ease
+  ;
 }
 .cityOptions button:hover{
   cursor: pointer;
-  background-color: var(--gris-claro);
+  background-color: var(--violeta);
+  color: #fff;
 }
 .cityOptions button:first-child{
   margin-top: 0;
@@ -92,6 +128,6 @@
   background-color: transparent;
 }
 .cityOptions::-webkit-scrollbar-thumb{
-  background-color: rgba(50, 50, 50, .5);
+  background-color: var(--violeta);
   border-radius: 1rem;
 }
